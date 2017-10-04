@@ -3,20 +3,17 @@
         <title>My blog</title>
     </head>
     <body>
-        <div>
-            <h1><a href="">My Blog</a></h1>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus rem nostrum vel maxime, mollitia quibusdam excepturi porro rerum voluptas blanditiis? Dicta ut iusto praesentium repudiandae ab perferendis, quasi quibusdam corporis animi placeat voluptate quisquam dolore quidem aliquam debitis ad nihil, expedita, dolorem ducimus quod voluptates! Quod deserunt voluptatem culpa maxime.</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio veritatis eos voluptatem perspiciatis aut dolores animi ducimus inventore assumenda eum.</p>
+    	<div>
+    	    <h1><a href="/">Django Girls Blog</a></h1>
+    	</div>
+	
+    	{% for post in posts %}
+    	    <div>
+    	        <p>published: {{ post.published_date }}</p>
+    	        <h1><a href="">{{ post.title }}</a></h1>
+    	        <p>{{ post.text|linebreaksbr }}</p>
+    	    </div>
+    	{% endfor %}
         </div>
     </body>
 </html>
